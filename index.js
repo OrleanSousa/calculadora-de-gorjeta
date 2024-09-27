@@ -1,4 +1,7 @@
-
+function formatMoney(value){
+    value = value.toFixed(2)
+    return 'R$ ' + value
+}
 
 function update(){
     let bill = Number(document.getElementById('yourBill').value)
@@ -10,9 +13,9 @@ function update(){
     let billEach = bilTotal / split
     
     document.getElementById('tipPercent').innerHTML = tipPercent + ' %'
-    document.getElementById('tipValue').innerHTML = 'R$ ' + tipValue
-    document.getElementById('totalWithTip').innerHTML = 'R$ ' + bilTotal
+    document.getElementById('tipValue').innerHTML = formatMoney(tipValue)
+    document.getElementById('totalWithTip').innerHTML =formatMoney(bilTotal)
     document.getElementById('splitValue').innerHTML = split
-    document.getElementById('billEach').innerHTML = 'R$ ' + billEach
+    document.getElementById('billEach').innerHTML =formatMoney(billEach)
 
 }
